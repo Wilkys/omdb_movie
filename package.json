@@ -1,0 +1,33 @@
+{
+  "name": "14_svelte_ex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@snowpack/plugin-babel": "^2.1.7",
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-optimize": "^0.2.13",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "@snowpack/plugin-svelte": "^3.7.0",
+    "autoprefixer": "^10.2.6",
+    "axios": "^0.21.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "lodash": "^4.17.21",
+    "postcss": "^8.3.0",
+    "qs": "^6.10.1",
+    "snowpack": "^3.5.6",
+    "svelte": "^3.38.2",
+    "svelte-spa-router": "^3.1.0"
+  }
+}
