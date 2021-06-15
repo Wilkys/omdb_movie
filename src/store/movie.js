@@ -7,9 +7,16 @@ export const loading = writable(false)
 export const theMovie = writable({})
 export const message = writable('Search for the movie title!')
 
+export function initMovies() {
+  movies.set([])
+  message.set('Search for the movie title!')
+  loading.set(false)
+}
+
 export async function searchMovies(payload){
   if (get(loading)) return //  중복 요청 방지. 현재 로딩중이면 다시 서치하지 않음
   loading.set(true)
+  message.set('')
 
   let total = 0
   
@@ -36,7 +43,7 @@ export async function searchMovies(payload){
 
   if (pageLength > 1) {
     for (let page = 2; page <= pageLength; page += 1) {
-      if(page > (number / 10)) break
+      if(page > (payload.number / 10)) break
       const res = await _fetchMovie({
         ...payload,
         page

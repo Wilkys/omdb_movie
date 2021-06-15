@@ -1,5 +1,5 @@
 <script>
-  import { link } from 'svelte-spa-router'
+  import { link, push } from 'svelte-spa-router'
   import active from 'svelte-spa-router/active'
   import Logo from '~/components/Logo.svelte'
 
@@ -37,7 +37,12 @@
       {/each}
     </ul>
   </nav>
-  <div class="user">
+  <div 
+    class="user"
+    on:click={(event) => {
+      console.log(event)
+      push('/about?name=Netlify&email=hello@netlify.com&image=%2Fassets%2Fnetlify.png')
+    }}>
     <img src="/assets/svelte.png" alt="User" />
   </div>
 </header>
@@ -51,8 +56,14 @@
     z-index:9;
     display: flex;
     align-items: flex-end;
+    @media #{$mobile} {
+      padding: 14px 20px;
+    }
     nav {
       margin-left: 40px;
+      @media #{$mobile} {
+        display: none;
+      }
       ul{
         display: flex;
         li{
@@ -83,6 +94,9 @@
       right: 40px;
       margin: auto;
       transition: .4s;
+      @media #{$mobile} {
+        right: 20px;
+      }
       &:hover{
         background-color: lighten($color--area, 20%);
       }
