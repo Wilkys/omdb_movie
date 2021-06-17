@@ -197,6 +197,7 @@
           @media #{$tablet} {
             transform: scale(0.85);
             transform-origin: left;
+            margin-right: 0;
           }
           img {
             flex-shrink: 0;
