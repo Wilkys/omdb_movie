@@ -1,5 +1,5 @@
 const axios = require('axios')
-const { OMDB_API_KEY } = orocess.env
+const { OMDB_API_KEY } = process.env
 
 exports.handler = async function(event, context) {
   const params = JSON.parse(event.body)
